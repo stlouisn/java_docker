@@ -42,7 +42,7 @@ install:
   - cat Dockerfile
 
 before_script:
-  - sed -i -e '/^$/d' -e 's/^[ \t]*//' -e '/^#/d' Dockerfile
+  - sed -i -e "/^$/d" -e "s/^[ \t]*//" -e "/^#/d" Dockerfile
 
 script:
   - >
