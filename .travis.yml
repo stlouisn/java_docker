@@ -28,11 +28,11 @@ env:
     - VCS_URL="`git remote get-url origin | head -c-5`"
   matrix:
     - DOCKER_TAG="default"
-      DOCKER_VERSION="`curl -s https://raw.githubusercontent.com/tianon/docker-brew-ubuntu-core/master/rolling`"
+      DOCKER_VERSION="``"
     - DOCKER_TAG="8"
       DOCKER_VERSION="`curl -s https://packages.ubuntu.com/artful/amd64/openjdk-8-jre-headless/download | grep 'Download Page' | awk -F '_' {'print $2'} | awk -F '-' {'print $1'}`"
     - DOCKER_TAG="9"
-      DOCKER_VERSION="`curl -s https://raw.githubusercontent.com/tianon/docker-brew-ubuntu-core/master/rolling`"
+      DOCKER_VERSION="``"
 
 before_install:
   - docker version
