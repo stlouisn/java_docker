@@ -1,4 +1,4 @@
-### Java Base Image
+### Java Base Images
 
 *'OpenJDK-8 Base Image'*
 
