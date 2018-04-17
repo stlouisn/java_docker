@@ -1,6 +1,6 @@
-### Ubuntu Java Image
+### Java Base Image
 
-*'Rolling Java Image'*
+*'Java Base Image'*
 
 [![Version](https://images.microbadger.com/badges/version/stlouisn/java:8.svg)](https://microbadger.com/images/stlouisn/java:8)
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/java:8.svg)](https://microbadger.com/images/stlouisn/java:8)
