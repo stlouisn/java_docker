@@ -30,15 +30,9 @@ env:
     - DOCKER_TAG="default"
       OPENJDK_VERSION="`(docker pull stlouisn/ubuntu:rolling && docker run -it --rm stlouisn/ubuntu:rolling /bin/bash -c 'apt update -qqq && apt-cache depends default-jre-headless') | grep openjdk | grep Depends | awk -F ' ' {'print $2'}`"
       DOCKER_VERSION="`(docker pull stlouisn/ubuntu:rolling && docker run -it --rm stlouisn/ubuntu:rolling /bin/bash -c 'apt update -qqq && apt-cache madison $OPENJDK_VERSION') | grep Packages | awk -F ' ' {'print $3'} | awk -F '-' {'print $1'} | sort | tail -n 1`"
-      #DOCKER_VERSION="`curl -sSL 'https://packages.ubuntu.com/$DISTRIB_CODENAME/amd64/openjdk-8-jre-headless/download' | grep 'Download Page' | awk -F '_' {'print $2'} | awk -F '-' {'print $1'}`"
-    #- DOCKER_TAG="9"
-     # DOCKER_VERSION="`curl -sSL 'https://packages.ubuntu.com/$DISTRIB_CODENAME/amd64/openjdk-9-jre-headless/download' | grep 'Download Page' | awk -F '_' {'print $2'} | awk -F '-' {'print $1'}`"
-      
+
 before_install:
   - docker version
-
-install:
-  - sed -i -e "s|APT_NAME_JAVA|${OPENJDK_VERSION}|" Dockerfile
 
 before_script:
   - sed -i -e "/^$/d" -e "s/^[ \t]*//" -e "/^#/d" Dockerfile
