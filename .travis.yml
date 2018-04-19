@@ -33,6 +33,9 @@ env:
 
 before_install:
   - docker version
+  - echo DOCKER_TAG
+  - echo OPENJDK_VERSION
+  - echo DOCKER_VERSION
 
 before_script:
   - sed -i -e "/^$/d" -e "s/^[ \t]*//" -e "/^#/d" Dockerfile
