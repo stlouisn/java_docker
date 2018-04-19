@@ -36,10 +36,7 @@ before_install:
   - docker version
 
 install:
-  - echo $DOCKER_VERSION
-  - echo $DOCKER_TAG
   - sed -i -e "s|APT_NAME_JAVA|openjdk-${DOCKER_TAG}-jre-headless|" Dockerfile
-  - cat Dockerfile
 
 before_script:
   - sed -i -e "/^$/d" -e "s/^[ \t]*//" -e "/^#/d" Dockerfile
