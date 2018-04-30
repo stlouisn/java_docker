@@ -15,7 +15,7 @@
 [![Docker Stars][docker_stars_logo]][docker_hub_url]
 [![Docker Pulls][docker_pulls_logo]][docker_hub_url]
 
-Default-OpenJDK Java Base Image.
+OpenJDK-8-JRE-Headless on Ubuntu.
 
 ### Tags
 
