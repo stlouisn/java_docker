@@ -1,10 +1,42 @@
-### Java Base Images
+[travis_logo]: https://travis-ci.org/stlouisn/java_docker.svg?branch=master
+[travis_url]: https://travis-ci.org/stlouisn/java_docker
+[docker_stars_logo]: https://img.shields.io/docker/stars/stlouisn/java.svg
+[docker_pulls_logo]: https://img.shields.io/docker/pulls/stlouisn/java.svg
+[docker_hub_url]: https://hub.docker.com/r/stlouisn/java
+[microbadger_url]: https://microbadger.com/images/stlouisn/java
+[feathub_data]: http://feathub.com/stlouisn/java_docker?format=svg
+[feathub_url]: http://feathub.com/stlouisn/java_docker
+[issues_url]: https://github.com/stlouisn/java_docker/issues
+[slack_url]: https://stlouisn.slack.com/messages/CAEU4EUJD
 
-*'Default OpenJDK Base Image'*
+### Java Docker
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/java:default.svg)](https://microbadger.com/images/stlouisn/java:default)
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/java:default.svg)](https://microbadger.com/images/stlouisn/java:default)
-[![Commit](https://images.microbadger.com/badges/commit/stlouisn/java.svg)](https://microbadger.com/images/stlouisn/java:default)
-[![Build](https://travis-ci.org/stlouisn/java_docker.svg?branch=master)](https://travis-ci.org/stlouisn/java_docker)
+[![Build Status][travis_logo]][travis_url]
+[![Docker Stars][docker_stars_logo]][docker_hub_url]
+[![Docker Pulls][docker_pulls_logo]][docker_hub_url]
+
+Java Base Image Based on Default OpenJDK
+
+### Tags
+
+[![Version](https://images.microbadger.com/badges/version/stlouisn/java:default.svg)][microbadger_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/java:default.svg)][microbadger_url]
+
+### Usage
+
+```
+
+```
+
+### Feature Requests
+
+[![Feature Requests][feathub_data]][feathub_url]
+
+### Support
+
+[![Slack Channel](https://img.shields.io/badge/-message-no.svg?colorA=a7a7a7&colorB=3eb991&logo=slack&logoWidth=14)][slack_url]
+[![GitHub Issues](https://img.shields.io/badge/-issues-no.svg?colorA=a7a7a7&colorB=e01563&logo=github&logoWidth=14)][issues_url]
+
+### Links
 
 ###### *http://openjdk.java.net/*
