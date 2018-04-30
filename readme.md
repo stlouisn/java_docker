@@ -15,7 +15,7 @@
 [![Docker Stars][docker_stars_logo]][docker_hub_url]
 [![Docker Pulls][docker_pulls_logo]][docker_hub_url]
 
-OpenJDK-8-JRE-Headless on Ubuntu.
+OpenJDK 8 Ubuntu Base Image.
 
 ### Tags
 
