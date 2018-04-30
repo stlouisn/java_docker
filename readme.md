@@ -15,7 +15,7 @@
 [![Docker Stars][docker_stars_logo]][docker_hub_url]
 [![Docker Pulls][docker_pulls_logo]][docker_hub_url]
 
-Java Base Image Based on Default OpenJDK
+Default OpenJDK Java Base
 
 ### Tags
 
