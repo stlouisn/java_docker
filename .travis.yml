@@ -27,10 +27,8 @@ env:
     - VCS_REF="`git rev-parse --short HEAD`"
     - VCS_URL="`git remote get-url origin | head -c-5`"
   matrix:
-    - DOCKER_TAG="8"
-      DOCKER_VERSION="`(docker pull stlouisn/ubuntu:rolling && docker run -it --rm stlouisn/ubuntu:rolling /bin/bash -c 'apt update -qqq && apt-cache madison openjdk-8-jre-headless') | grep Packages | awk -F ' ' {'print $3'} | awk -F '-' {'print $1'} | sort | tail -n 1`"
-    - DOCKER_TAG="9"
-      DOCKER_VERSION="`(docker pull stlouisn/ubuntu:rolling && docker run -it --rm stlouisn/ubuntu:rolling /bin/bash -c 'apt update -qqq && apt-cache madison openjdk-9-jre-headless') | grep Packages | awk -F ' ' {'print $3'} | awk -F '-' {'print $1'} | sort | tail -n 1`"
+    - DOCKER_TAG="stable"
+      DOCKER_VERSION="`(docker pull stlouisn/ubuntu:rolling && docker run -it --rm stlouisn/ubuntu:rolling /bin/bash -c 'apt update -qqq && apt-cache madison openjdk-8-jre-headless') | grep Packages | awk -F '|' {'print $2'} | tr -d ' '`"
 
 before_install:
   - docker version
