@@ -27,7 +27,7 @@ env:
     - VCS_REF="`git rev-parse --short HEAD`"
     - VCS_URL="`git remote get-url origin | head -c-5`"
   matrix:
-    - DOCKER_TAG="stable"
+    - DOCKER_TAG="default"
       DOCKER_VERSION="`(docker pull stlouisn/ubuntu:rolling && docker run -it --rm stlouisn/ubuntu:rolling /bin/bash -c 'apt update -qqq && apt-cache madison openjdk-8-jre-headless') | grep Packages | awk -F '|' {'print $2'} | tr -d ' '`"
 
 before_install:
