@@ -22,12 +22,6 @@ OpenJDK 8 Ubuntu Base Image.
 [![Version](https://images.microbadger.com/badges/version/stlouisn/java:default.svg)][microbadger_url]
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/java:default.svg)][microbadger_url]
 
-### Usage
-
-```
-
-```
-
 ### Feature Requests
 
 [![Feature Requests][feathub_data]][feathub_url]
