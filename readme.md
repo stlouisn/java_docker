@@ -7,7 +7,7 @@
 [feathub_data]: http://feathub.com/stlouisn/java_docker?format=svg
 [feathub_url]: http://feathub.com/stlouisn/java_docker
 [issues_url]: https://github.com/stlouisn/java_docker/issues
-[slack_url]: https://stlouisn.slack.com/messages/CAEU4EUJD
+[slack_url]: https://stlouisn.slack.com/messages/CBRNYGY3V
 
 ## Java Docker
 
