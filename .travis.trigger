@@ -6,6 +6,7 @@ echo "arg2 ="$2
 
 echo ${TRAVIS_API_TOKEN} > file1
 cat file1
+
 echo $2 > file2
 cat file2
 
