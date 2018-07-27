@@ -71,8 +71,8 @@ after_success:
 
   # Trigger java:8 dependant builds
   - if [ "${DOCKER_TAG}" == "8" ]; then
-    bash .travis.trigger "https://api.travis-ci.org/repo/stlouisn/airsonic_docker/requests";
-    bash .travis.trigger "https://api.travis-ci.org/repo/stlouisn/unifi_docker/requests";
+    bash .travis.trigger "https://api.travis-ci.org/repo/stlouisn/airsonic_docker/requests" "${TRAVIS_API_TOKEN}";
+    bash .travis.trigger "https://api.travis-ci.org/repo/stlouisn/unifi_docker/requests" "${TRAVIS_API_TOKEN}";
     fi
 
   # Trigger airsonic_docker build
