@@ -4,6 +4,11 @@ echo "token = "${TRAVIS_API_TOKEN}
 echo "arg1 ="$1
 echo "arg2 ="$2
 
+echo ${TRAVIS_API_TOKEN} > file1
+cat file1
+echo $2 > file2
+cat file2
+
 if [[ ! -z $1 ]]; then
 
   curl -X POST \
