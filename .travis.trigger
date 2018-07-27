@@ -8,6 +8,6 @@ if [[ ! -z $1 ]]; then
     -H "Travis-API-Version: 3" \
     -H "Authorization: token ${TRAVIS_API_TOKEN}" \
     -d '{"request": {"message": "Push from stlouisn/ubuntu:rolling", "branch": "master"}}' \
-    %1
+    $1
 
 fi
