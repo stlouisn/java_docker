@@ -70,8 +70,7 @@ after_success:
     fi
 
   # Trigger airsonic_docker build
-  - if [ "${DOCKER_TAG}" == "8" ]; then
-    - >
+  - if [ "${DOCKER_TAG}" == "8" ]; then |
       curl -X POST
       -H "Content-Type: application/json"
       -H "Travis-API-Version: 3"
@@ -81,17 +80,17 @@ after_success:
       'https://api.travis-ci.org/repo/stlouisn%2Fairsonic_docker/requests';
     fi
 
-  # Trigger unifi_docker build
-  - if [ "${DOCKER_TAG}" == "8" ]; then
-    - >
-      curl -X POST
-      -H "Content-Type: application/json"
-      -H "Travis-API-Version: 3"
-      -H "Accept: application/json"
-      -H "Authorization: token ${TRAVIS_API_TOKEN}"
-      -d '{"request": {"message": "Push from stlouisn/ubuntu:rolling", "branch": "master"}}'
-      'https://api.travis-ci.org/repo/stlouisn%2Funifi_docker/requests';
-    fi
+#  # Trigger unifi_docker build
+#  - if [ "${DOCKER_TAG}" == "8" ]; then
+#    - >
+#      curl -X POST
+#      -H "Content-Type: application/json"
+#      -H "Travis-API-Version: 3"
+#      -H "Accept: application/json"
+#      -H "Authorization: token ${TRAVIS_API_TOKEN}"
+#      -d '{"request": {"message": "Push from stlouisn/ubuntu:rolling", "branch": "master"}}'
+#      'https://api.travis-ci.org/repo/stlouisn%2Funifi_docker/requests';
+#    fi
 
 notifications:
   email:
