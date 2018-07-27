@@ -1,6 +1,8 @@
 #
 
-echo token = ${TRAVIS_API_TOKEN}
+echo "token = "${TRAVIS_API_TOKEN}
+echo "arg1 ="$1
+echo "arg2 ="$2
 
 if [[ ! -z $1 ]]; then
 
@@ -9,7 +11,7 @@ if [[ ! -z $1 ]]; then
     -H "Accept: application/json" \
     -H "Travis-API-Version: 3" \
     -H "Authorization: token ${TRAVIS_API_TOKEN}" \
-    -d '{"request": {"message": "Push from stlouisn/ubuntu:rolling", "branch": "master"}}' \
+    -d "{'request': {'message': 'Push from stlouisn/ubuntu:rolling', 'branch': 'master'}}" \
     $1
 
 fi
