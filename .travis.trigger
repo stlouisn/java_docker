@@ -1,5 +1,7 @@
 #
 
+echo token = ${TRAVIS_API_TOKEN}
+
 if [[ ! -z $1 ]]; then
 
   curl -X POST \
