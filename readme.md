@@ -15,12 +15,18 @@
 [![Docker Stars][docker_stars_logo]][docker_hub_url]
 [![Docker Pulls][docker_pulls_logo]][docker_hub_url]
 
-OpenJDK 8 Ubuntu Base Image.
+OpenJDK Ubuntu Base Image.
 
 ### Tags
 
-[![Version](https://images.microbadger.com/badges/version/stlouisn/java:default.svg)][microbadger_url]
-[![Layers](https://images.microbadger.com/badges/image/stlouisn/java:default.svg)][microbadger_url]
+[![Version](https://images.microbadger.com/badges/version/stlouisn/java:stable.svg)][microbadger_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/java:stable.svg)][microbadger_url]
+
+[![Version](https://images.microbadger.com/badges/version/stlouisn/java:9.svg)][microbadger_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/java:9.svg)][microbadger_url]
+
+[![Version](https://images.microbadger.com/badges/version/stlouisn/java:8.svg)][microbadger_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/java:8.svg)][microbadger_url]
 
 ### Feature Requests
 
