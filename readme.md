@@ -33,4 +33,4 @@ OpenJDK 8 Ubuntu Base Image.
 
 ### Links
 
-###### *http://openjdk.java.net/*
+*http://openjdk.java.net/*
