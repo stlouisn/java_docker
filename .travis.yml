@@ -71,9 +71,9 @@ after_success:
 
   # Trigger java:8 dependant builds
   - if [ "${DOCKER_TAG}" == "8" ]; then
-    curl -X POST -H "Content-Type: application/json" -H "Travis-API-Version: 3" -H "Accept: application/json" -H "Authorization: token ${TRAVIS_API_TOKEN}" -d "{'request': {'message': 'Push from stlouisn/ubuntu:rolling', 'branch': 'master'}}"  "https://api.travis-ci.org/repo/stlouisn%2Fairsonic_docker/requests";
+    curl -X POST -H 'Content-Type: application/json' -H 'Travis-API-Version: 3' -H 'Accept: application/json' -H 'Authorization: token ${TRAVIS_API_TOKEN}' -d '{"request": {"message": "Push from stlouisn/ubuntu:rolling", "branch": "master"}}'  'https://api.travis-ci.org/repo/stlouisn/airsonic_docker/requests';
     #bash .travis.trigger "https://api.travis-ci.org/repo/stlouisn/airsonic_docker/requests";
-    bash .travis.trigger "https://api.travis-ci.org/repo/stlouisn/unifi_docker/requests";
+    #bash .travis.trigger "https://api.travis-ci.org/repo/stlouisn/unifi_docker/requests";
     fi
 
   # Trigger airsonic_docker build
