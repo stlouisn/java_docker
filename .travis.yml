@@ -81,13 +81,7 @@ after_success:
 
   # Trigger unifi_docker build
   - if [ "${DOCKER_TAG}" == "8" ]; then
-    curl -X POST
-    -H "Content-Type: application/json"
-    -H "Travis-API-Version: 3"
-    -H "Accept: applcation/json"
-    -H "Authorization: token ${TRAVIS_API_TOKEN}"
-    -d '{"request": {"message": "Push from stlouisn/ubuntu:rolling", "branch": "master"}}'
-    'https://api.travis-ci.org/repo/stlouisn%2Funifi_docker/requests';
+    curl -X POST -H "Content-Type: application/json" -H "Travis-API-Version: 3" -H "Accept: applcation/json" -H "Authorization: token ${TRAVIS_API_TOKEN}" -d '{"request": {"message": "Push from stlouisn/ubuntu:rolling", "branch": "master"}}' 'https://api.travis-ci.org/repo/stlouisn%2Funifi_docker/requests';
     fi
 
 notifications:
