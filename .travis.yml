@@ -25,7 +25,6 @@ before_install:
   - sudo /sbin/sysctl -w net.ipv4.conf.all.forwarding=1
 
 install:
-  - sed -i "s/default-jre-headless/openjdk-${DOCKER_TAG}-jre-headless/" Dockerfile
 
 before_script:
   - sed -i -e "/^$/d" -e "s/^[ \t]*//" -e "/^#/d" Dockerfile
