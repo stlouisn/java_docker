@@ -9,7 +9,7 @@ RUN \
 
     # Install Java
     apt-get install -y --no-install-recommends \
-        default-jre-headless && \
+        openjdk-8-jre-headless && \
 
     # Clean apt-cache
     apt-get autoremove -y --purge && \
