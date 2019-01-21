@@ -44,7 +44,7 @@ after_success:
     -H "Travis-API-Version: 3"
     -H "Accept: application/json"
     -H "Authorization: token ${TRAVIS_API_TOKEN}"
-    -d '{"request": {"message": "Push from stlouisn/ubuntu:rolling", "branch": "master"}}'
+    -d '{"request": {"message": "Push from stlouisn/java", "branch": "master"}}'
     'https://api.travis-ci.org/repo/stlouisn%2Fairsonic_docker/requests';
     fi
 
@@ -56,7 +56,7 @@ after_success:
     -H "Travis-API-Version: 3"
     -H "Accept: application/json"
     -H "Authorization: token ${TRAVIS_API_TOKEN}"
-    -d '{"request": {"message": "Push from stlouisn/ubuntu:rolling", "branch": "master"}}'
+    -d '{"request": {"message": "Push from stlouisn/java", "branch": "master"}}'
     'https://api.travis-ci.org/repo/stlouisn%2Funifi_docker/requests';
     fi
 
