@@ -12,6 +12,8 @@ branches:
   only:
     - master
 
+stage: build
+
 env:
   global:
     - DOCKER_MAINTAINER="stlouisn"
@@ -36,29 +38,33 @@ after_success:
   - echo ${DOCKER_PASSWORD} | docker login --username ${DOCKER_USERNAME} --password-stdin
   - docker push ${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_TAG}
 
-  # Trigger airsonic_docker build
-  - >
-    if [[ "${DOCKER_TAG}" == "8" ]]; then
-    curl -X POST
-    -H "Content-Type: application/json"
-    -H "Travis-API-Version: 3"
-    -H "Accept: application/json"
-    -H "Authorization: token ${TRAVIS_API_TOKEN}"
-    -d '{"request": {"message": "Push from stlouisn/java", "branch": "master"}}'
-    'https://api.travis-ci.org/repo/stlouisn%2Fairsonic_docker/requests';
-    fi
-
-  # Trigger unifi_docker build
-  - >
-    if [[ "${DOCKER_TAG}" == "8" ]]; then
-    curl -X POST
-    -H "Content-Type: application/json"
-    -H "Travis-API-Version: 3"
-    -H "Accept: application/json"
-    -H "Authorization: token ${TRAVIS_API_TOKEN}"
-    -d '{"request": {"message": "Push from stlouisn/java", "branch": "master"}}'
-    'https://api.travis-ci.org/repo/stlouisn%2Funifi_docker/requests';
-    fi
+jobs:
+  include:
+    - stage: trigger
+      env: DOCKER_TAG=none
+      before_install: skip
+      install: skip
+      before_script: skip
+      script:
+      # Trigger airsonic_docker build
+      - >
+        curl -X POST
+        -H "Content-Type: application/json"
+        -H "Travis-API-Version: 3"
+        -H "Accept: application/json"
+        -H "Authorization: token ${TRAVIS_API_TOKEN}"
+        -d '{"request": {"message": "Push from stlouisn/java", "branch": "master"}}'
+        'https://api.travis-ci.org/repo/stlouisn%2Fairsonic_docker/requests'
+      # Trigger unifi_docker build
+      - >
+        curl -X POST
+        -H "Content-Type: application/json"
+        -H "Travis-API-Version: 3"
+        -H "Accept: application/json"
+        -H "Authorization: token ${TRAVIS_API_TOKEN}"
+        -d '{"request": {"message": "Push from stlouisn/java", "branch": "master"}}'
+        'https://api.travis-ci.org/repo/stlouisn%2Funifi_docker/requests'
+      after_success: skip
 
 notifications:
   email:
