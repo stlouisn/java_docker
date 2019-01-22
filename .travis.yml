@@ -3,14 +3,15 @@ dist: trusty
 group: travis_latest
 sudo: required
 
+if: |
+  branch = master AND \
+  NOT commit_message =~ /readme.md/ AND \
+  NOT commit_message =~ /docker-compose.yml/
+
 addons:
   apt:
     packages:
       - docker-ce
-
-branches:
-  only:
-    - master
 
 stage: build
 
