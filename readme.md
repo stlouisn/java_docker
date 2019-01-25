@@ -16,7 +16,7 @@
 [![Docker Pulls][docker_pulls_logo]][docker_hub_url]
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Java Base Images.
+OpenJDK Java Base Images.
 
 ### Tags
 
