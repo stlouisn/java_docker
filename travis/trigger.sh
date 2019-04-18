@@ -6,7 +6,7 @@ builds="airsonic_docker unifi_docker"
 
 body='{
 "request": {
-"message": "Push from stlouisn/ubuntu",
+"message": "Push from stlouisn/java",
 "branch": "master"
 }}'
 
