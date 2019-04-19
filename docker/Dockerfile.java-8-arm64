@@ -11,7 +11,7 @@ RUN \
     apt-get install -y --no-install-recommends \
         openjdk-8-jre-headless \
 
-    # Temporary fix for qemu-static arm related issues
+    # Temporary fix for qemu-static-arm64 related issues
     || true && \
     rm /etc/ssl/certs/hs_err_pid* -f && \
     rm /etc/ssl/certs/core* -f && \
