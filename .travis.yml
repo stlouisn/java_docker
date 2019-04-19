@@ -2,13 +2,16 @@ dist: xenial
 group: travis_latest
 sudo: required
 
-language: bash
-
 if: |
   branch = master AND \
   ! commit_message =~ /readme.md/ AND \
   ! commit_message =~ /docker-compose.yml/ OR \
   type = cron
+
+language: go
+
+services:
+  - docker
 
 addons:
   apt:
@@ -33,7 +36,14 @@ env:
 
 before_install:
   - sudo /sbin/sysctl -w net.ipv4.conf.all.forwarding=1
-  - export DOCKER_BUILDKIT=1
+
+  - |
+    echo '{
+      "experimental": true,
+      "storage-driver": "overlay2",
+      "features": { "buildkit": true }
+    }' | sudo tee /etc/docker/daemon.json
+  - sudo service docker restart
   - docker info
   - docker version
 
