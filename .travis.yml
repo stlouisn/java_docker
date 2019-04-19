@@ -35,6 +35,7 @@ before_install:
   - sudo docker version
 
 install:
+  - sudo docker run --privileged linuxkit/binfmt:v0.7
 
 before_script:
   - sed -i -e '/^$/d' -e 's/^[ \t]*//' -e '/^#/d' docker/Dockerfile*
