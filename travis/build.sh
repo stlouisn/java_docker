@@ -12,7 +12,7 @@ do
 	echo ${DOCKER_PASSWORD} | docker login --username ${DOCKER_USERNAME} --password-stdin
 
 	# Build temporary image
-	buildctl build \
+	buildctl --debug build \
 		--frontend dockerfile.v0 \
 		--opt platform=linux/$arch \
 		--opt filename=docker/Dockerfile.${DOCKER_NAME}-${DOCKER_TAG}-$arch \
