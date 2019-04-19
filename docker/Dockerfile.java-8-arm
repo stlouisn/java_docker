@@ -1,5 +1,4 @@
-#FROM stlouisn/ubuntu:rolling-arm
-FROM arm64v8/ubuntu:xenial
+FROM stlouisn/ubuntu:rolling-arm
 
 RUN \
 
@@ -11,10 +10,11 @@ RUN \
     # Install Java
     apt-get install -y --no-install-recommends \
         openjdk-8-jre-headless \
+
     # Temporary fix for qemu-static arm related issues
     || true && \
     rm /etc/ssl/certs/hs_err_pid* -f && \
-    rm /etc/ssl/certs/core* && \
+    rm /etc/ssl/certs/core* -f && \
 
     # Clean apt-cache
     apt-get autoremove -y --purge && \
