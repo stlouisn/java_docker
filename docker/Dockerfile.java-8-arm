@@ -1,5 +1,5 @@
 #FROM stlouisn/ubuntu:rolling-arm
-FROM arm64v8/ubuntu:devel
+FROM arm64v8/ubuntu:xenial
 
 RUN \
 
@@ -13,6 +13,8 @@ RUN \
         openjdk-8-jre-headless \
     # Temporary fix for qemu-static arm related issues
     || true && \
+    rm /etc/ssl/certs/hs_err_pid* -f && \
+    rm /etc/ssl/certs/core* && \
 
     # Clean apt-cache
     apt-get autoremove -y --purge && \
