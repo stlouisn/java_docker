@@ -2,16 +2,22 @@
 
 set -euo pipefail
 
-# Platforms to build
+# Architectures to build
 architectures="arm arm64 amd64"
 
-for arch in $architectures; do
+for arch in $architectures
+do
 
-	DOCKER_BUILDKIT=1 docker build \
-	--platform linux/$arch \
-	--progress plain \
-	--tag "$DOCKER_USERNAME/$DOCKER_NAME:$DOCKER_TAG-$arch" \
-	--file docker/Dockerfile.$DOCKER_NAME-$DOCKER_TAG-$arch \
-	--pull docker/.
+	# Login into docker
+	echo ${DOCKER_PASSWORD} | docker login --username ${DOCKER_USERNAME} --password-stdin
+
+	# Build temporary image
+	buildctl --debug build \
+		--frontend dockerfile.v0 \
+		--opt platform=linux/$arch \
+		--opt filename=docker/Dockerfile.${DOCKER_NAME}-${DOCKER_TAG}-$arch \
+		--local dockerfile=. \
+		--local context=. \
+		--output type=image,name=docker.io/${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_TAG}-$arch,push=true
 
 done
