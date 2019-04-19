@@ -45,10 +45,10 @@ before_script:
 
 script:
   - sudo bash travis/build.sh
-  #- sudo bash travis/deploy.sh
+  - sudo bash travis/deploy.sh
 
 after_success:
-  #- sudo bash travis/trigger.sh
+  - sudo bash travis/trigger.sh
 
 notifications:
   email:
