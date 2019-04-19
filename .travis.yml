@@ -1,6 +1,5 @@
 dist: xenial
 group: travis_latest
-sudo: required
 
 if: |
   branch = master AND \
@@ -8,7 +7,8 @@ if: |
   ! commit_message =~ /docker-compose.yml/ OR \
   type = cron
 
-language: go
+language: bash
+sudo: required
 
 services:
   - docker
