@@ -15,6 +15,9 @@ services:
 
 addons:
   apt:
+    sources:
+      - "deb [arch=armhf] https://download.docker.com/linux/debian stretch stable"
+      key_url: https://download.docker.com/linux/debian/gpg
     packages:
       - docker-ce
 
