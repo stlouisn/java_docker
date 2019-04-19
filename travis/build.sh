@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+#set -euo pipefail
+ # Temporary fix for qemu-static-arm related issues
+set -u
 
 # Architectures to build
 architectures="arm arm64 amd64"
 
-for arch in $architectures
-do
+for arch in $architectures; do
 
 	# Login into docker
 	echo ${DOCKER_PASSWORD} | docker login --username ${DOCKER_USERNAME} --password-stdin
