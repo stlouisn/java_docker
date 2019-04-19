@@ -18,13 +18,13 @@ deb [arch=armhf] https://download.docker.com/linux/debian stretch stable
 #deb [arch=armhf] https://download.docker.com/linux/debian stretch edge
 EOF
 
-#curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 
-# apt update -q
+apt update -q
 
-#export DOCKER_BUILDKIT=1
-  
- service docker restart || sudo journalctl -xe
+apt install -y docker-ce
+
+service docker restart || sudo journalctl -xe
  
- docker info
- docker version
+docker info
+docker version
