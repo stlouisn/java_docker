@@ -36,7 +36,7 @@ env:
 
 before_install:
   - sudo /sbin/sysctl -w net.ipv4.conf.all.forwarding=1
-  - sudo bash docker.sh
+  - sudo bash travis/docker.sh
 
 install:
 
