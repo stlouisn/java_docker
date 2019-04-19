@@ -36,14 +36,9 @@ env:
 
 before_install:
   - sudo /sbin/sysctl -w net.ipv4.conf.all.forwarding=1
-
-  - |
-    echo '{
-      "experimental": true,
-      "storage-driver": "overlay2",
-      "features": { "buildkit": true }
-    }' | sudo tee /etc/docker/daemon.json
-  - sudo service docker restart || sudo journalctl -xe
+  - echo '{ "experimental": true }' | sudo tee /etc/docker/daemon.json
+  - export DOCKER_BUILDKIT=1
+  - sudo service docker restart
   - docker info
   - docker version
 
