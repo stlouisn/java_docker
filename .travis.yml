@@ -38,7 +38,7 @@ install:
   - sudo docker run --privileged linuxkit/binfmt:v0.7
   - sudo docker run --privileged -d -p 1234:1234 --name buildkit moby/buildkit:latest --addr tcp://0.0.0.0:1234 --oci-worker-platform linux/arm --oci-worker-platform linux/armhf --oci-worker-platform linux/arm64 --oci-worker-platform linux/amd64
   - sudo docker cp buildkit:/usr/bin/buildctl /usr/bin/
-  - sudo export BUILDKIT_HOST=tcp://0.0.0.0:1234
+  - export BUILDKIT_HOST=tcp://0.0.0.0:1234
   - sudo /usr/bin/qemu-arm --version
   - sudo /usr/bin/qemu-arm64 --version
   - sudo /usr/bin/qemu-amd --version
