@@ -36,9 +36,10 @@ env:
 
 before_install:
   - sudo /sbin/sysctl -w net.ipv4.conf.all.forwarding=1
-  - sudo echo '{ "storage-driver": "overlay2", "experimental": true }' > /etc/docker/daemon.json
+  - sudo echo '{ "experimental": true }' > /etc/docker/daemon.json
+  - cat /etc/docker/daemon.json
   - export DOCKER_BUILDKIT=1
-  - sudo service docker restart
+  - sudo service docker restart || sudo journalctl -xe
   - docker info
   - docker version
 
