@@ -9,9 +9,7 @@ RUN \
 
     # Install Java
     apt-get install -y --no-install-recommends \
-        openjdk-8-jre-headless \
-    # Temporary fix for qemu-static-arm64 related issues
-    || true && \
+        openjdk-8-jre-headless && \
 
     # Clean apt-cache
     apt-get autoremove -y --purge && \
