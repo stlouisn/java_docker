@@ -43,7 +43,7 @@ before_install:
       "storage-driver": "overlay2",
       "features": { "buildkit": true }
     }' | sudo tee /etc/docker/daemon.json
-  - sudo service docker restart
+  - sudo service docker restart || sudo journalctl -xe
   - docker info
   - docker version
 
