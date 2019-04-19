@@ -31,7 +31,7 @@ env:
 
 before_install:
   - sudo /sbin/sysctl -w net.ipv4.conf.all.forwarding=1
-  - docker version
+  - sudo bash travis/docker.sh
 
 install:
   - sudo docker run --privileged linuxkit/binfmt:v0.7
