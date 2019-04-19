@@ -11,22 +11,13 @@ cat <<'EOF' > /etc/docker/daemon.json
 }
 EOF
 
-#cat /etc/docker/daemon.json
-
-#cat <<'EOF' > /etc/apt/sources.list.d/docker.list
-#deb https://download.docker.com/linux/debian stretch stable
-#deb https://download.docker.com/linux/debian stretch edge
-#EOF
-
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+apt-get update -q
 
-apt update -q
+apt-get install -y docker-ce
 
-apt install -y docker-ce
-
-service docker restart || sudo journalctl -xe
+service docker restart
  
 docker info
-docker version
