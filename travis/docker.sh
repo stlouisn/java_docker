@@ -3,10 +3,7 @@
 set -euo pipefail
 
 # Enable docker experimental and buildkit mdoes
-echo '{"experimental":true,"features":{"buildkit":true}}' | tee /etc/docker/daemon.json
-
-# Restart docker service
-service docker restart
+export DOCKER_BUILDKIT=1
 
 # Display docker information
 docker info
