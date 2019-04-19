@@ -8,7 +8,7 @@ architectures="arm arm64 amd64"
 for arch in $architectures; do
 
 	docker build \
-		--platform=linux/$arch \
+	--platform=linux/$arch \
     	--label org.label-schema.build-date="$BUILD_DATE" \
     	--label org.label-schema.build-number="$BUILD_NUMBER" \
     	--label org.label-schema.description="$DOCKER_DESCRIPTION" \
@@ -19,8 +19,8 @@ for arch in $architectures; do
     	--label org.label-schema.schema-version="$SCHEMA_VERSION" \
     	--label org.label-schema.vcs-ref="$VCS_REF" \
     	--label org.label-schema.vcs-url="$VCS_URL" \
-		--tag $DOCKER_USERNAME/$DOCKER_NAME:$DOCKER_TAG-$arch \
-		--file docker/Dockerfile.$DOCKER_NAME-$DOCKER_TAG-$arch \
-		--pull
+	--tag $DOCKER_USERNAME/$DOCKER_NAME:$DOCKER_TAG-$arch \
+	--file docker/Dockerfile.$DOCKER_NAME-$DOCKER_TAG-$arch \
+	--pull
 
 done
