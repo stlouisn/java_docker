@@ -9,7 +9,6 @@ for arch in $architectures; do
 
 	DOCKER_BUILDKIT=1 docker build \
 	--platform linux/$arch \
-	--progress plain \
 	--tag "$DOCKER_USERNAME/$DOCKER_NAME:$DOCKER_TAG-$arch" \
 	--file docker/Dockerfile.$DOCKER_NAME-$DOCKER_TAG-$arch \
 	--pull docker/.
