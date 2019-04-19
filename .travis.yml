@@ -2,9 +2,7 @@ dist: xenial
 group: travis_latest
 
 if: |
-  branch = master
-  AND ! commit_message =~ /readme.md/
-  AND ! commit_message =~ /docker-compose.yml/
+  branch = master AND ! commit_message =~ /readme.md/ AND ! commit_message =~ /docker-compose.yml/
   OR type = cron
 
 language: bash
@@ -45,7 +43,7 @@ script:
   - sudo bash travis/deploy.sh
 
 after_success:
-  - sudo bash travis/trigger.sh
+  #- sudo bash travis/trigger.sh
 
 notifications:
   email:
