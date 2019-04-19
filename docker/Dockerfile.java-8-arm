@@ -1,4 +1,5 @@
-FROM stlouisn/ubuntu:rolling-arm
+#FROM stlouisn/ubuntu:rolling-arm
+FROM arm64v8/ubuntu:devel
 
 RUN \
 
