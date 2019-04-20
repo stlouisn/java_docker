@@ -2,8 +2,6 @@ FROM stlouisn/ubuntu:rolling-arm64
 
 RUN \
 
-set -x && \
-
     export DEBIAN_FRONTEND=noninteractive && \
 
     # Update apt-cache
