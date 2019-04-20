@@ -39,4 +39,5 @@ RUN \
         /var/lib/apt/lists/*
 
 #ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-armhf/jre
+
 ENV JAVA_HOME=/usr/lib/jvm/zulu-embedded-8-armhf/
