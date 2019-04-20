@@ -25,7 +25,7 @@ RUN \
 
     # Install Java
     apt-get install -y --no-install-recommends \
-        zulu-embedded-8 && \
+        zulu-embedded-8:armhf && \
 
 ls -la /usr/lib/jvm && \
 
@@ -46,5 +46,4 @@ ls -la /usr/lib/jvm && \
         /var/lib/apt/lists/*
 
 #ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64/jre
-ENV JAVA_HOME=/usr/lib/jvm/zulu-8/
-#ENV JAVA_HOME=/usr/lib/jvm/zulu-embedded-8-armhf/
+ENV JAVA_HOME=/usr/lib/jvm/zulu-embedded-8-armhf/
