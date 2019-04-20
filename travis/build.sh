@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-#set -euo pipefail
- # Temporary fix for qemu-static-arm related issues
 set -u
 
 # Architectures to build
@@ -13,12 +11,13 @@ for arch in $architectures; do
 	echo ${DOCKER_PASSWORD} | docker login --username ${DOCKER_USERNAME} --password-stdin
 
 	# Build temporary image
-	buildctl --debug build \
+	buildctl build \
 		--frontend dockerfile.v0 \
+		--progress plain \
 		--opt platform=linux/$arch \
-		--opt filename=docker/Dockerfile.${DOCKER_NAME}-${DOCKER_TAG}-$arch \
+		--opt filename=dockerfiles/${DOCKER_NAME}-${DOCKER_TAG}-${OS_NAME}-$arch \
 		--local dockerfile=. \
 		--local context=. \
-		--output type=image,name=docker.io/${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_TAG}-$arch,push=true
+		--output type=image,name=docker.io/${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_TAG}-${OS_NAME}-$arch,push=true
 
 done
