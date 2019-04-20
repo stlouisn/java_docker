@@ -2,6 +2,8 @@ FROM stlouisn/ubuntu:rolling-arm64
 
 RUN \
 
+set -x && \
+
     export DEBIAN_FRONTEND=noninteractive && \
 
     # Update apt-cache
@@ -22,12 +24,6 @@ RUN \
 
     # Update apt-cache
     apt-get update && \
-
-apt-get search zulu && \
-
-    # Install Java
-    apt-get install -y --no-install-recommends \
-        zulu-8 && \
 
     # Install Java
     apt-get install -y --no-install-recommends \
