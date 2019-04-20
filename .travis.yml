@@ -41,8 +41,6 @@ install:
   - sudo docker cp buildkit:/usr/bin/buildctl /usr/bin/
   - export BUILDKIT_HOST=tcp://0.0.0.0:1234
 
-  - sudo docker run -it --rm stlouisn/ubuntu:rolling /bin bash -l 'apt update; apt-get -y install dirmngr gnupg; apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xB1998361219BD9C9; echo "deb http://repos.azulsystems.com/debian stable main" > /etc/apt/sources.list.d/zulu.list; apt update; apt search zulu-'
-
 before_script:
   - sed -i -e '/^$/d' -e 's/^[ \t]*//' -e '/^#/d' dockerfiles/*
 
