@@ -7,9 +7,25 @@ RUN \
     # Update apt-cache
     apt-get update && \
 
+    # Install temporary-tools
+    apt-get install -y --no-install-recommends \
+        dirmngr \
+        gnupg && \
+
+#    # Install Java
+#    apt-get install -y --no-install-recommends \
+#        openjdk-8-jre-headless && \
+
+    # Add zulu repository
+    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xB1998361219BD9C9 && \
+    echo "deb http://repos.azulsystems.com/debian stable main" > /etc/apt/sources.list.d/zulu.list && \
+
+    # Update apt-cache
+    apt-get update && \
+
     # Install Java
     apt-get install -y --no-install-recommends \
-        openjdk-8-jre-headless && \
+        zulu-embedded-8:armhf && \
 
     # Clean apt-cache
     apt-get autoremove -y --purge && \
@@ -22,4 +38,5 @@ RUN \
         /tmp/* \
         /var/lib/apt/lists/*
 
-ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-armhf/jre
+#ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-armhf/jre
+ENV JAVA_HOME=/usr/lib/jvm/zulu-embedded-8-armhf/
