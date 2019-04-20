@@ -27,8 +27,6 @@ RUN \
     apt-get install -y --no-install-recommends \
         zulu-embedded-8:armhf && \
 
-ls -la /usr/lib/jvm && \
-
     # Remove temporary-tools
     apt-get purge -y \
         dirmngr \
