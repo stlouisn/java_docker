@@ -2,8 +2,10 @@
 
 set -euo pipefail
 
+# Builds to trigger
 builds="airsonic_docker unifi_docker"
 
+# Commit Message
 body='{
 "request": {
 "message": "Push from stlouisn/java",
