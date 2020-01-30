@@ -34,4 +34,4 @@ Java Base Image.
 
 ### Links
 
-*http://openjdk.java.net/*
+*https://www.azul.com/products/zulu-embedded/*
