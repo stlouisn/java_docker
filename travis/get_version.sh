@@ -2,5 +2,5 @@
 
 set -euo pipefail
 
-# Output java version from ubuntu:rolling repository
-echo "$(curl -fsSL --retry 5 --retry-delay 2 https://packages.ubuntu.com/${OS_CODENAME}/openjdk-${DOCKER_TAG}-jre-headless | grep 'Package:' | awk -F '(' {'print $2'})"
+# Output java version from zulu:github releases
+echo "$(curl -fssL --retry 5 --retry-delay 2 https://github.com/zulu-openjdk/zulu-openjdk/tree/master/${DOCKER_TAG}-latest | grep '<code>8</code>' | awk -F '>' {'print $4'} | awk -F '<' {'print $1'})"
