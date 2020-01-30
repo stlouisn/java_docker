@@ -34,4 +34,4 @@ RUN \
         /tmp/* \
         /var/lib/apt/lists/*
 
-ENV JAVA_HOME=/usr/lib/jvm/zulu-8-amd64/
+ENV JAVA_HOME=/usr/lib/jvm/zulu-11-amd64/
