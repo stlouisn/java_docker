@@ -12,10 +12,6 @@ RUN \
         dirmngr \
         gnupg && \
 
-#    # Install Java
-#    apt-get install -y --no-install-recommends \
-#        openjdk-8-jre-headless && \
-
     # Add zulu repository
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xB1998361219BD9C9 && \
     echo "deb http://repos.azulsystems.com/debian stable main" > /etc/apt/sources.list.d/zulu.list && \
@@ -37,7 +33,5 @@ RUN \
         /root/.wget-hsts \
         /tmp/* \
         /var/lib/apt/lists/*
-
-#ENV JAVA_HOME=/usr/lib/jvm/default-java/jre
 
 ENV JAVA_HOME=/usr/lib/jvm/zulu-8-amd64/
