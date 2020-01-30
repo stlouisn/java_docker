@@ -28,8 +28,8 @@ env:
   matrix:
     - DOCKER_TAG="8"
       DOCKER_VERSION="$(sudo bash travis/get_version.sh)"
-#    - DOCKER_TAG="11"
-#      DOCKER_VERSION="$(sudo bash travis/get_version.sh)"
+    - DOCKER_TAG="11"
+      DOCKER_VERSION="$(sudo bash travis/get_version.sh)"
 
 
 before_install:
