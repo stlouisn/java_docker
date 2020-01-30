@@ -31,7 +31,6 @@ env:
     - DOCKER_TAG="11"
       DOCKER_VERSION="$(sudo bash travis/get_version.sh)"
 
-
 before_install:
   - sudo /sbin/sysctl -w net.ipv4.conf.all.forwarding=1
   - sudo bash travis/docker.sh
