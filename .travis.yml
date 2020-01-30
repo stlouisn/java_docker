@@ -25,9 +25,9 @@ env:
     - VCS_REF="$(git rev-parse --short HEAD)"
     - VCS_URL="$(git remote get-url origin | head -c-5)"
 
- #matrix:
+  matrix:
     - DOCKER_TAG="8"
-    - DOCKER_VERSION="$(sudo bash travis/get_version.sh)"
+      DOCKER_VERSION="$(sudo bash travis/get_version.sh)"
 #    - DOCKER_TAG="11"
 #      DOCKER_VERSION="$(sudo bash travis/get_version.sh)"
 
