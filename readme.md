@@ -22,7 +22,8 @@ Java Base Image.
 
 [![Version](https://images.microbadger.com/badges/version/stlouisn/java:8.svg)][microbadger_url]
 [![Layers](https://images.microbadger.com/badges/image/stlouisn/java:8.svg)][microbadger_url]
-
+[![Version](https://images.microbadger.com/badges/version/stlouisn/java:11.svg)][microbadger_url]
+[![Layers](https://images.microbadger.com/badges/image/stlouisn/java:11.svg)][microbadger_url]
 ### Feature Requests
 
 [![Feature Requests][feathub_data]][feathub_url]
