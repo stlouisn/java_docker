@@ -1,5 +1,5 @@
-[travis_logo]: https://travis-ci.org/stlouisn/java_docker.svg?branch=master
-[travis_url]: https://travis-ci.org/stlouisn/java_docker
+[travis_logo]: https://travis-ci.com/stlouisn/java_docker.svg?branch=master
+[travis_url]: https://travis-ci.com/stlouisn/java_docker
 [docker_stars_logo]: https://img.shields.io/docker/stars/stlouisn/java.svg
 [docker_pulls_logo]: https://img.shields.io/docker/pulls/stlouisn/java.svg
 [docker_hub_url]: https://hub.docker.com/r/stlouisn/java
